@@ -17,6 +17,9 @@ public class Product {
     private int quantity;
     private double price;
 
+    @Column(columnDefinition = "LONGTEXT")
+    private String imageUrl;
+
     // Explicit getters and setters
     public Long getId() {
         return id;
@@ -48,5 +51,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

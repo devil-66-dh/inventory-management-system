@@ -7,6 +7,7 @@ function ProductList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [editingProduct, setEditingProduct] = useState(null);
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'table'
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -42,13 +43,124 @@ function ProductList() {
 
   return (
     <div style={{ border: '1px solid #ddd', padding: '20px', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
-      <h2>Product Inventory</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <h2>Product Inventory</h2>
+        <div>
+          <button
+            onClick={() => setViewMode('grid')}
+            style={{
+              padding: '8px 15px',
+              backgroundColor: viewMode === 'grid' ? '#2196F3' : '#ccc',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              marginRight: '10px'
+            }}
+          >
+            Grid View
+          </button>
+          <button
+            onClick={() => setViewMode('table')}
+            style={{
+              padding: '8px 15px',
+              backgroundColor: viewMode === 'table' ? '#2196F3' : '#ccc',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Table View
+          </button>
+        </div>
+      </div>
+
       {products.length === 0 ? (
         <p>No products found. Add one to get started!</p>
+      ) : viewMode === 'grid' ? (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' }}>
+          {products.map((product) => (
+            <div
+              key={product.id}
+              style={{
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                transition: 'transform 0.2s',
+                backgroundColor: 'white'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            >
+              {product.imageUrl && (
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  style={{
+                    width: '100%',
+                    height: '200px',
+                    objectFit: 'cover',
+                    backgroundColor: '#f0f0f0'
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+              )}
+              <div style={{ padding: '15px' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '18px' }}>{product.name}</h3>
+                <p style={{ margin: '5px 0', color: '#666' }}>
+                  <strong>Quantity:</strong> {product.quantity}
+                </p>
+                <p style={{ margin: '5px 0', color: '#666' }}>
+                  <strong>Price:</strong> ${product.price.toFixed(2)}
+                </p>
+                <p style={{ margin: '10px 0', padding: '5px', borderRadius: '4px', backgroundColor: product.quantity < 5 ? '#fff3cd' : '#c8e6c9' }}>
+                  {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: 'bold' }}>⚠️ Low Stock</span> : <span style={{ color: 'green', fontWeight: 'bold' }}>✓ In Stock</span>}
+                </p>
+                <div style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
+                  <button
+                    onClick={() => setEditingProduct(product)}
+                    style={{
+                      flex: 1,
+                      padding: '8px',
+                      backgroundColor: '#2196F3',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '14px'
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(product.id)}
+                    style={{
+                      flex: 1,
+                      padding: '8px',
+                      backgroundColor: '#f44336',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '14px'
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       ) : (
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr style={{ backgroundColor: '#4CAF50', color: 'white' }}>
+              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Image</th>
               <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>ID</th>
               <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Name</th>
               <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Quantity</th>
@@ -60,6 +172,23 @@ function ProductList() {
           <tbody>
             {products.map((product) => (
               <tr key={product.id} style={{ backgroundColor: product.quantity < 5 ? '#fff3cd' : 'white' }}>
+                <td style={{ padding: '10px', border: '1px solid #ddd' }}>
+                  {product.imageUrl && (
+                    <img
+                      src={product.imageUrl}
+                      alt={product.name}
+                      style={{
+                        width: '50px',
+                        height: '50px',
+                        objectFit: 'cover',
+                        borderRadius: '4px'
+                      }}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  )}
+                </td>
                 <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.id}</td>
                 <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.name}</td>
                 <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.quantity}</td>
