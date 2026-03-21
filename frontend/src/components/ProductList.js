@@ -42,36 +42,40 @@ function ProductList() {
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
   return (
-    <div style={{ border: '1px solid #ddd', padding: '20px', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-        <h2>Product Inventory</h2>
-        <div>
+    <div style={{ border: '1px solid #e0e0e0', padding: '30px', borderRadius: '12px', backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px', flexWrap: 'wrap', gap: '15px' }}>
+        <h2 style={{ color: '#2196F3', fontSize: '1.8em', margin: 0 }}>📦 Product Inventory ({products.length})</h2>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           <button
             onClick={() => setViewMode('grid')}
             style={{
               padding: '8px 15px',
-              backgroundColor: viewMode === 'grid' ? '#2196F3' : '#ccc',
-              color: 'white',
+              backgroundColor: viewMode === 'grid' ? '#4CAF50' : '#e0e0e0',
+              color: viewMode === 'grid' ? 'white' : '#333',
               border: 'none',
               borderRadius: '4px',
               cursor: 'pointer',
-              marginRight: '10px'
+              marginRight: '10px',
+              fontWeight: viewMode === 'grid' ? '600' : '500',
+              transition: 'all 0.3s ease'
             }}
           >
-            Grid View
+            🔲 Grid View
           </button>
           <button
             onClick={() => setViewMode('table')}
             style={{
               padding: '8px 15px',
-              backgroundColor: viewMode === 'table' ? '#2196F3' : '#ccc',
-              color: 'white',
+              backgroundColor: viewMode === 'table' ? '#4CAF50' : '#e0e0e0',
+              color: viewMode === 'table' ? 'white' : '#333',
               border: 'none',
               borderRadius: '4px',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              fontWeight: viewMode === 'table' ? '600' : '500',
+              transition: 'all 0.3s ease'
             }}
           >
-            Table View
+            📋 Table View
           </button>
         </div>
       </div>
@@ -84,15 +88,21 @@ function ProductList() {
             <div
               key={product.id}
               style={{
-                border: '1px solid #ddd',
-                borderRadius: '8px',
+                border: '1px solid #e0e0e0',
+                borderRadius: '12px',
                 overflow: 'hidden',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                transition: 'transform 0.2s',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                transition: 'all 0.3s ease',
                 backgroundColor: 'white'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+              }}
             >
               {product.imageUrl && (
                 <img

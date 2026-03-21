@@ -47,9 +47,17 @@ function ProductForm() {
   };
 
   return (
-    <div style={{ border: '1px solid #ddd', padding: '20px', borderRadius: '8px', marginBottom: '20px', backgroundColor: '#f9f9f9' }}>
-      <h2>Add New Product</h2>
-      {error && <p style={{ color: 'red', marginBottom: '10px' }}>{error}</p>}
+    <div style={{ 
+      border: '1px solid #e0e0e0', 
+      padding: '30px', 
+      borderRadius: '12px', 
+      marginBottom: '30px', 
+      backgroundColor: 'white',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+      animation: 'fadeIn 0.3s ease'
+    }}>
+      <h2 style={{ color: '#2196F3', marginBottom: '20px', fontSize: '1.8em' }}>➕ Add New Product</h2>
+      {error && <p style={{ color: '#d32f2f', marginBottom: '15px', padding: '10px', backgroundColor: '#ffebee', borderRadius: '4px', fontWeight: '500' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px', gap: '20px', alignItems: 'start' }}>
           <div>
