@@ -42,40 +42,69 @@ function ProductList() {
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
   return (
-    <div style={{ border: '1px solid #e0e0e0', padding: '30px', borderRadius: '12px', backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px', flexWrap: 'wrap', gap: '15px' }}>
-        <h2 style={{ color: '#2196F3', fontSize: '1.8em', margin: 0 }}>📦 Product Inventory ({products.length})</h2>
-        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+    <div style={{ border: '2px solid #E8E0D5', padding: '35px', borderRadius: '20px', backgroundColor: '#FEFEF9', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)', animation: 'fadeIn 0.6s ease 0.2s both' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
+        <h2 style={{ color: '#FF8E53', fontSize: '2em', margin: 0, fontWeight: '800', letterSpacing: '-0.5px' }}>📦 Products ({products.length})</h2>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
           <button
             onClick={() => setViewMode('grid')}
             style={{
-              padding: '8px 15px',
-              backgroundColor: viewMode === 'grid' ? '#4CAF50' : '#e0e0e0',
-              color: viewMode === 'grid' ? 'white' : '#333',
+              padding: '12px 20px',
+              background: viewMode === 'grid' ? 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)' : '#E8E0D5',
+              color: viewMode === 'grid' ? 'white' : '#2c2c2c',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '10px',
               cursor: 'pointer',
-              marginRight: '10px',
-              fontWeight: viewMode === 'grid' ? '600' : '500',
-              transition: 'all 0.3s ease'
+              fontWeight: '700',
+              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              boxShadow: viewMode === 'grid' ? '0 4px 15px rgba(255, 107, 107, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.08)',
+              transform: viewMode === 'grid' ? 'scale(1)' : 'scale(1)',
+              letterSpacing: '0.5px'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.05) translateY(-2px)';
+              if (viewMode === 'grid') {
+                e.target.style.boxShadow = '0 8px 25px rgba(255, 107, 107, 0.4)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1) translateY(0)';
+              if (viewMode === 'grid') {
+                e.target.style.boxShadow = '0 4px 15px rgba(255, 107, 107, 0.3)';
+              }
             }}
           >
-            🔲 Grid View
+            🔲 Grid
           </button>
           <button
             onClick={() => setViewMode('table')}
             style={{
-              padding: '8px 15px',
-              backgroundColor: viewMode === 'table' ? '#4CAF50' : '#e0e0e0',
-              color: viewMode === 'table' ? 'white' : '#333',
+              padding: '12px 20px',
+              background: viewMode === 'table' ? 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)' : '#E8E0D5',
+              color: viewMode === 'table' ? 'white' : '#2c2c2c',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '10px',
               cursor: 'pointer',
-              fontWeight: viewMode === 'table' ? '600' : '500',
-              transition: 'all 0.3s ease'
+              fontWeight: '700',
+              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              boxShadow: viewMode === 'table' ? '0 4px 15px rgba(255, 107, 107, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.08)',
+              transform: viewMode === 'table' ? 'scale(1)' : 'scale(1)',
+              letterSpacing: '0.5px'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.05) translateY(-2px)';
+              if (viewMode === 'table') {
+                e.target.style.boxShadow = '0 8px 25px rgba(255, 107, 107, 0.4)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1) translateY(0)';
+              if (viewMode === 'table') {
+                e.target.style.boxShadow = '0 4px 15px rgba(255, 107, 107, 0.3)';
+              }
             }}
           >
-            📋 Table View
+            📋 Table
           </button>
         </div>
       </div>
@@ -83,25 +112,27 @@ function ProductList() {
       {products.length === 0 ? (
         <p>No products found. Add one to get started!</p>
       ) : viewMode === 'grid' ? (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' }}>
-          {products.map((product) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '25px' }}>
+          {products.map((product, index) => (
             <div
               key={product.id}
               style={{
-                border: '1px solid #e0e0e0',
-                borderRadius: '12px',
+                border: '2px solid #E8E0D5',
+                borderRadius: '16px',
                 overflow: 'hidden',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                transition: 'all 0.3s ease',
-                backgroundColor: 'white'
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                backgroundColor: 'white',
+                animation: `fadeIn 0.5s ease ${index * 0.1}s both`,
+                cursor: 'pointer'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.15)';
+                e.currentTarget.style.transform = 'translateY(-12px)';
+                e.currentTarget.style.boxShadow = '0 12px 35px rgba(255, 107, 107, 0.15)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.08)';
               }}
             >
               {product.imageUrl && (
@@ -130,36 +161,72 @@ function ProductList() {
                 <p style={{ margin: '10px 0', padding: '5px', borderRadius: '4px', backgroundColor: product.quantity < 5 ? '#fff3cd' : '#c8e6c9' }}>
                   {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: 'bold' }}>⚠️ Low Stock</span> : <span style={{ color: 'green', fontWeight: 'bold' }}>✓ In Stock</span>}
                 </p>
-                <div style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
+                <div style={{ display: 'flex', gap: '12px', marginTop: '15px' }}>
                   <button
                     onClick={() => setEditingProduct(product)}
                     style={{
                       flex: 1,
-                      padding: '8px',
-                      backgroundColor: '#2196F3',
+                      padding: '10px 16px',
+                      background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)',
                       color: 'white',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       cursor: 'pointer',
-                      fontSize: '14px'
+                      fontSize: '14px',
+                      fontWeight: '700',
+                      transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
+                      letterSpacing: '0.5px'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
+                      e.target.style.boxShadow = '0 8px 25px rgba(255, 107, 107, 0.4)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1) translateY(0)';
+                      e.target.style.boxShadow = '0 4px 15px rgba(255, 107, 107, 0.3)';
+                    }}
+                    onMouseDown={(e) => {
+                      e.target.style.transform = 'scale(0.95) translateY(0)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
                     }}
                   >
-                    Edit
+                    ✏️ Edit
                   </button>
                   <button
                     onClick={() => handleDelete(product.id)}
                     style={{
                       flex: 1,
-                      padding: '8px',
-                      backgroundColor: '#f44336',
+                      padding: '10px 16px',
+                      background: 'linear-gradient(135deg, #FF6B6B 0%, #FF4757 100%)',
                       color: 'white',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       cursor: 'pointer',
-                      fontSize: '14px'
+                      fontSize: '14px',
+                      fontWeight: '700',
+                      transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      boxShadow: '0 4px 15px rgba(255, 71, 87, 0.3)',
+                      letterSpacing: '0.5px'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
+                      e.target.style.boxShadow = '0 8px 25px rgba(255, 71, 87, 0.4)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1) translateY(0)';
+                      e.target.style.boxShadow = '0 4px 15px rgba(255, 71, 87, 0.3)';
+                    }}
+                    onMouseDown={(e) => {
+                      e.target.style.transform = 'scale(0.95) translateY(0)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
                     }}
                   >
-                    Delete
+                    🗑️ Delete
                   </button>
                 </div>
               </div>
@@ -167,22 +234,31 @@ function ProductList() {
           ))}
         </div>
       ) : (
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', animation: 'fadeIn 0.6s ease 0.2s both' }}>
           <thead>
-            <tr style={{ backgroundColor: '#4CAF50', color: 'white' }}>
-              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Image</th>
-              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>ID</th>
-              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Name</th>
-              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Quantity</th>
-              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Price</th>
-              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Status</th>
-              <th style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd' }}>Actions</th>
+            <tr style={{ background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)', color: 'white', fontWeight: '700' }}>
+              <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Image</th>
+              <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>ID</th>
+              <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Name</th>
+              <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Quantity</th>
+              <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Price</th>
+              <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Status</th>
+              <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {products.map((product) => (
-              <tr key={product.id} style={{ backgroundColor: product.quantity < 5 ? '#fff3cd' : 'white' }}>
-                <td style={{ padding: '10px', border: '1px solid #ddd' }}>
+              <tr key={product.id} style={{ backgroundColor: product.quantity < 5 ? '#fff3cd' : '#FEFEF9', borderBottom: '1px solid #E8E0D5', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = product.quantity < 5 ? '#FFE5CC' : '#f0ebe3';
+                  e.currentTarget.style.boxShadow = '0 2px 12px rgba(255, 107, 107, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = product.quantity < 5 ? '#fff3cd' : '#FEFEF9';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>
                   {product.imageUrl && (
                     <img
                       src={product.imageUrl}
@@ -191,7 +267,7 @@ function ProductList() {
                         width: '50px',
                         height: '50px',
                         objectFit: 'cover',
-                        borderRadius: '4px'
+                        borderRadius: '6px'
                       }}
                       onError={(e) => {
                         e.target.style.display = 'none';
@@ -199,40 +275,76 @@ function ProductList() {
                     />
                   )}
                 </td>
-                <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.id}</td>
-                <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.name}</td>
-                <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.quantity}</td>
-                <td style={{ padding: '10px', border: '1px solid #ddd' }}>${product.price.toFixed(2)}</td>
-                <td style={{ padding: '10px', border: '1px solid #ddd' }}>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>{product.id}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>{product.name}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>{product.quantity}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>${product.price.toFixed(2)}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>
                   {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: 'bold' }}>Low Stock ⚠️</span> : 'In Stock ✓'}
                 </td>
-                <td style={{ padding: '10px', border: '1px solid #ddd' }}>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>
                   <button
                     onClick={() => setEditingProduct(product)}
                     style={{
-                      padding: '5px 10px',
-                      backgroundColor: '#2196F3',
+                      padding: '8px 12px',
+                      background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)',
                       color: 'white',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '6px',
                       cursor: 'pointer',
-                      marginRight: '5px'
+                      marginRight: '8px',
+                      fontWeight: '700',
+                      fontSize: '13px',
+                      transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      boxShadow: '0 2px 8px rgba(255, 107, 107, 0.2)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
+                      e.target.style.boxShadow = '0 6px 16px rgba(255, 107, 107, 0.35)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1) translateY(0)';
+                      e.target.style.boxShadow = '0 2px 8px rgba(255, 107, 107, 0.2)';
+                    }}
+                    onMouseDown={(e) => {
+                      e.target.style.transform = 'scale(0.95) translateY(0)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
                     }}
                   >
-                    Edit
+                    ✏️ Edit
                   </button>
                   <button
                     onClick={() => handleDelete(product.id)}
                     style={{
-                      padding: '5px 10px',
-                      backgroundColor: '#f44336',
+                      padding: '8px 12px',
+                      background: 'linear-gradient(135deg, #FF6B6B 0%, #FF4757 100%)',
                       color: 'white',
                       border: 'none',
-                      borderRadius: '4px',
-                      cursor: 'pointer'
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                      fontWeight: '700',
+                      fontSize: '13px',
+                      transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      boxShadow: '0 2px 8px rgba(255, 71, 87, 0.2)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
+                      e.target.style.boxShadow = '0 6px 16px rgba(255, 71, 87, 0.35)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1) translateY(0)';
+                      e.target.style.boxShadow = '0 2px 8px rgba(255, 71, 87, 0.2)';
+                    }}
+                    onMouseDown={(e) => {
+                      e.target.style.transform = 'scale(0.95) translateY(0)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.target.style.transform = 'scale(1.05) translateY(-2px)';
                     }}
                   >
-                    Delete
+                    🗑️ Delete
                   </button>
                 </td>
               </tr>

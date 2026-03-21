@@ -5,7 +5,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #FEFEF9 0%, #F5F1E8 100%);
   min-height: 100vh;
 }
 
@@ -13,15 +13,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #FEFEF9 0%, #F5F1E8 100%);
 }
 
 /* Header Styles */
 .app-header {
-  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FFA500 100%);
   color: white;
-  padding: 30px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 40px 20px;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -33,6 +33,7 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
+  animation: slideIn 0.6s ease;
 }
 
 .logo-container {
@@ -40,33 +41,35 @@ body {
 }
 
 .app-logo {
-  width: 80px;
-  height: 80px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
   animation: logoFloat 3s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px) rotate(5deg);
   }
 }
 
 .header-text h1 {
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin: 0;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-text .subtitle {
-  font-size: 1em;
-  margin-top: 8px;
-  opacity: 0.95;
-  font-weight: 300;
+  font-size: 1.1em;
+  margin-top: 10px;
+  opacity: 0.98;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 /* Main Content */
@@ -75,18 +78,23 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 /* Footer */
 .app-footer {
-  background-color: #333;
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 25px 20px;
   margin-top: auto;
   font-size: 0.9em;
-  opacity: 0.9;
+  opacity: 0.95;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.app-footer p {
+  margin: 0;
 }
 
 /* Responsive Design */
@@ -98,15 +106,15 @@ body {
   }
 
   .header-text h1 {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 
   .app-logo {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
 
   .main-content {
-    padding: 20px 15px;
+    padding: 30px 15px;
   }
 }
