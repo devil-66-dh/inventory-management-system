@@ -65,13 +65,13 @@ function ProductEdit({ product, onClose, onSave }) {
         border: '2px solid #E8E0D5',
         animation: 'slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
       }}>
-        <h2 style={{ marginTop: 0, marginBottom: '25px', color: '#FF6B6B', fontSize: '2em', fontWeight: '800', letterSpacing: '-0.5px' }}>✏️ Edit Product</h2>
-        {error && <p style={{ color: '#FF6B6B', marginBottom: '15px', fontWeight: '700', backgroundColor: '#ffe6e6', padding: '12px', borderRadius: '8px', borderLeft: '4px solid #FF6B6B' }}>{error}</p>}
+        <h2 style={{ marginTop: 0, marginBottom: '25px', color: '#FF6B6B', fontSize: '2em', fontWeight: '900', letterSpacing: '-0.5px' }}>✏️ Edit Product</h2>
+        {error && <p style={{ color: '#FF6B6B', marginBottom: '15px', fontWeight: '900', backgroundColor: '#ffe6e6', padding: '12px', borderRadius: '8px', borderLeft: '4px solid #FF6B6B' }}>{error}</p>}
         
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 120px', gap: '20px', marginBottom: '20px' }}>
           <div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Product Name: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Product Name: </label>
               <input
                 type="text"
                 name="name"
@@ -84,7 +84,7 @@ function ProductEdit({ product, onClose, onSave }) {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Quantity: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Quantity: </label>
               <input
                 type="number"
                 name="quantity"
@@ -97,7 +97,7 @@ function ProductEdit({ product, onClose, onSave }) {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Price: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Price: </label>
               <input
                 type="number"
                 name="price"
@@ -111,7 +111,7 @@ function ProductEdit({ product, onClose, onSave }) {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Image URL: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Image URL: </label>
               <input
                 type="url"
                 name="imageUrl"
@@ -128,7 +128,7 @@ function ProductEdit({ product, onClose, onSave }) {
 
           {imagePreview && (
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '13px', color: '#2c2c2c', marginTop: 0, fontWeight: '700', letterSpacing: '0.3px' }}>📸 Preview:</p>
+              <p style={{ fontSize: '13px', color: '#2c2c2c', marginTop: 0, fontWeight: '900', letterSpacing: '0.3px' }}>📸 Preview:</p>
               <img 
                 src={imagePreview} 
                 alt="preview" 
@@ -152,7 +152,7 @@ function ProductEdit({ product, onClose, onSave }) {
               borderRadius: '10px',
               cursor: loading ? 'not-allowed' : 'pointer',
               opacity: loading ? 0.7 : 1,
-              fontWeight: '700',
+              fontWeight: '900',
               fontSize: '14px',
               transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
               boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
@@ -192,7 +192,7 @@ function ProductEdit({ product, onClose, onSave }) {
               border: '2px solid #E8E0D5',
               borderRadius: '10px',
               cursor: loading ? 'not-allowed' : 'pointer',
-              fontWeight: '700',
+              fontWeight: '900',
               fontSize: '14px',
               transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
               boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)',

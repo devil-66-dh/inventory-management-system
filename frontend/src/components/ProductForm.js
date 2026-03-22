@@ -57,13 +57,13 @@ function ProductForm() {
       animation: 'fadeIn 0.6s ease',
       backdrop: 'blur(10px)'
     }}>
-      <h2 style={{ color: '#FF6B6B', marginBottom: '25px', fontSize: '2em', fontWeight: '800', letterSpacing: '-0.5px' }}>➕ Add New Product</h2>
-      {error && <p style={{ color: '#d32f2f', marginBottom: '15px', padding: '12px 15px', backgroundColor: '#ffebee', borderRadius: '8px', fontWeight: '600', border: '2px solid #FF6B6B' }}>{error}</p>}
+      <h2 style={{ color: '#FF6B6B', marginBottom: '25px', fontSize: '2em', fontWeight: '900', letterSpacing: '-0.5px' }}>➕ Add New Product</h2>
+      {error && <p style={{ color: '#d32f2f', marginBottom: '15px', padding: '12px 15px', backgroundColor: '#ffebee', borderRadius: '8px', fontWeight: '800', border: '2px solid #FF6B6B' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px', gap: '20px', alignItems: 'start' }}>
           <div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Product Name: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Product Name: </label>
               <input
                 type="text"
                 name="name"
@@ -74,7 +74,7 @@ function ProductForm() {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Quantity: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Quantity: </label>
               <input
                 type="number"
                 name="quantity"
@@ -85,7 +85,7 @@ function ProductForm() {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Price: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Price: </label>
               <input
                 type="number"
                 name="price"
@@ -97,7 +97,7 @@ function ProductForm() {
               />
             </div>
             <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Image URL: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '900', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Image URL: </label>
               <input
                 type="url"
                 name="imageUrl"
@@ -120,7 +120,7 @@ function ProductForm() {
                 cursor: loading ? 'not-allowed' : 'pointer',
                 opacity: loading ? 0.8 : 1,
                 fontSize: '1em',
-                fontWeight: '700',
+                fontWeight: '900',
                 letterSpacing: '0.5px',
                 boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
                 transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',

@@ -44,7 +44,7 @@ function ProductList() {
   return (
     <div style={{ border: '2px solid #E8E0D5', padding: '35px', borderRadius: '20px', backgroundColor: '#FEFEF9', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)', animation: 'fadeIn 0.6s ease 0.2s both' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
-        <h2 style={{ color: '#FF8E53', fontSize: '2em', margin: 0, fontWeight: '800', letterSpacing: '-0.5px' }}>📦 Products ({products.length})</h2>
+        <h2 style={{ color: '#FF8E53', fontSize: '2em', margin: 0, fontWeight: '900', letterSpacing: '-0.5px' }}>📦 Products ({products.length})</h2>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
           <button
             onClick={() => setViewMode('grid')}
@@ -55,7 +55,7 @@ function ProductList() {
               border: 'none',
               borderRadius: '10px',
               cursor: 'pointer',
-              fontWeight: '700',
+              fontWeight: '900',
               transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
               boxShadow: viewMode === 'grid' ? '0 4px 15px rgba(255, 107, 107, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.08)',
               transform: viewMode === 'grid' ? 'scale(1)' : 'scale(1)',
@@ -85,7 +85,7 @@ function ProductList() {
               border: 'none',
               borderRadius: '10px',
               cursor: 'pointer',
-              fontWeight: '700',
+              fontWeight: '900',
               transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
               boxShadow: viewMode === 'table' ? '0 4px 15px rgba(255, 107, 107, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.08)',
               transform: viewMode === 'table' ? 'scale(1)' : 'scale(1)',
@@ -151,15 +151,15 @@ function ProductList() {
                 />
               )}
               <div style={{ padding: '15px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '20px', fontWeight: '800', color: '#000000', textShadow: '0 2px 4px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.1)', letterSpacing: '-0.5px' }}>{product.name}</h3>
-                <p style={{ margin: '8px 0', color: '#000000', fontWeight: '700', fontSize: '16px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '20px', fontWeight: '900', color: '#000000', textShadow: '0 2px 4px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.1)', letterSpacing: '-0.5px' }}>{product.name}</h3>
+                <p style={{ margin: '8px 0', color: '#000000', fontWeight: '900', fontSize: '16px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>
                   <strong>Quantity:</strong> {product.quantity}
                 </p>
-                <p style={{ margin: '8px 0', color: '#000000', fontWeight: '700', fontSize: '16px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>
+                <p style={{ margin: '8px 0', color: '#000000', fontWeight: '900', fontSize: '16px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>
                   <strong>Price:</strong> ${product.price.toFixed(2)}
                 </p>
                 <p style={{ margin: '10px 0', padding: '5px', borderRadius: '4px', backgroundColor: product.quantity < 5 ? '#fff3cd' : '#c8e6c9' }}>
-                  {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: 'bold' }}>⚠️ Low Stock</span> : <span style={{ color: 'green', fontWeight: 'bold' }}>✓ In Stock</span>}
+                  {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: '900' }}>⚠️ Low Stock</span> : <span style={{ color: '#2d8659', fontWeight: '900' }}>✓ In Stock</span>}
                 </p>
                 <div style={{ display: 'flex', gap: '12px', marginTop: '15px' }}>
                   <button
@@ -173,7 +173,7 @@ function ProductList() {
                       borderRadius: '8px',
                       cursor: 'pointer',
                       fontSize: '14px',
-                      fontWeight: '700',
+                      fontWeight: '900',
                       transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
                       boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
                       letterSpacing: '0.5px'
@@ -206,7 +206,7 @@ function ProductList() {
                       borderRadius: '8px',
                       cursor: 'pointer',
                       fontSize: '14px',
-                      fontWeight: '700',
+                      fontWeight: '900',
                       transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
                       boxShadow: '0 4px 15px rgba(255, 71, 87, 0.3)',
                       letterSpacing: '0.5px'
@@ -236,7 +236,7 @@ function ProductList() {
       ) : (
         <table style={{ width: '100%', borderCollapse: 'collapse', animation: 'fadeIn 0.6s ease 0.2s both' }}>
           <thead>
-            <tr style={{ background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)', color: 'white', fontWeight: '700' }}>
+            <tr style={{ background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)', color: 'white', fontWeight: '900' }}>
               <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Image</th>
               <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>ID</th>
               <th style={{ padding: '14px', textAlign: 'left', border: '1px solid #E8E0D5' }}>Name</th>
@@ -275,12 +275,12 @@ function ProductList() {
                     />
                   )}
                 </td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.id}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.name}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.quantity}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>${product.price.toFixed(2)}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5', fontWeight: 'bold' }}>
-                  {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: 'bold' }}>Low Stock ⚠️</span> : <span style={{ color: '#2d8659', fontWeight: 'bold' }}>In Stock ✓</span>}
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '900', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.id}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '900', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.name}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '900', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.quantity}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '900', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>${product.price.toFixed(2)}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', fontWeight: '900' }}>
+                  {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: '900' }}>Low Stock ⚠️</span> : <span style={{ color: '#2d8659', fontWeight: '900' }}>In Stock ✓</span>}
                 </td>
                 <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>
                   <button
