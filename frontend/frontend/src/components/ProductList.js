@@ -52,11 +52,11 @@ function ProductList() {
   };
 
   if (loading) return <div>Loading products...</div>;
-  if (error) return <div style={{ color: "red" }}>Error: {error}</div>;
+  if (error) return <div style={{ color: "#ff6666", background: '#330000', padding: '10px', borderRadius: '5px', margin: '10px 0' }}>Error: {error}</div>;
 
   return (
     <div>
-      <h2>📋 Product Inventory</h2>
+  <h2 style={{ color: '#f0f0f0', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>📋 Product Inventory</h2>
       
       {editingProduct && (
         <ProductEdit 
@@ -69,9 +69,9 @@ function ProductList() {
       {products.length === 0 ? (
         <p>No products found. Add one to get started!</p>
       ) : (
-        <table border="1" cellPadding="10" style={{ width: "100%", borderCollapse: "collapse" }}>
+        <table border="1" cellPadding="10" style={{ width: "100%", borderCollapse: "collapse", background: 'linear-gradient(145deg, #2d2d2d, #1a1a1a)', borderColor: '#444', borderRadius: '8px', overflow: 'hidden' }}>
           <thead>
-            <tr style={{ backgroundColor: "#f0f0f0" }}>
+            <tr style={{ background: 'linear-gradient(90deg, #333, #444)', color: '#f0f0f0' }}>
               <th>ID</th>
               <th>Name</th>
               <th>Quantity</th>
@@ -84,26 +84,29 @@ function ProductList() {
           <tbody>
             {products.map((p) => (
               <tr key={p.id} style={{
-                backgroundColor: p.quantity < 5 ? "#ffcccc" : "white"
+                backgroundColor: p.quantity < 5 ? "#330000" : "#2d2d2d",
+                color: '#f0f0f0'
               }}>
-                <td style={{ textAlign: "center" }}>{p.id}</td>
-                <td>{p.name}</td>
-                <td style={{ textAlign: "center" }}>{p.quantity}</td>
-                <td style={{ textAlign: "right" }}>${p.price.toFixed(2)}</td>
-                <td style={{ textAlign: "center" }}>
+                <td style={{ textAlign: "center", borderColor: '#444' }}>{p.id}</td>
+                <td style={{ color: '#f0f0f0' }}>{p.name}</td>
+                <td style={{ textAlign: "center", color: '#f0f0f0' }}>{p.quantity}</td>
+                <td style={{ textAlign: "right", color: '#d4a500' }}>${p.price.toFixed(2)}</td>
+                <td style={{ textAlign: "center", color: p.quantity < 5 ? '#ff6666' : '#90ee90' }}>
                   {p.quantity < 5 ? "⚠ Low Stock" : "✅ OK"}
                 </td>
-                <td style={{ textAlign: "center" }}>
+                <td style={{ textAlign: "center", borderColor: '#444' }}>
                   <button 
                     onClick={() => handleEdit(p)}
                     style={{ 
-                      backgroundColor: "#2196F3",
-                      color: "white",
-                      padding: "6px 12px",
+                      background: 'linear-gradient(145deg, #b0b0b0, #888)',
+                      color: "#1a1a1a",
+                      padding: "8px 16px",
                       marginRight: "5px",
                       border: "none",
-                      borderRadius: "3px",
-                      cursor: "pointer"
+                      borderRadius: "6px",
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
                     }}
                   >
                     Edit
@@ -111,12 +114,14 @@ function ProductList() {
                   <button 
                     onClick={() => handleDelete(p.id)}
                     style={{
-                      backgroundColor: "#f44336",
+                      background: 'linear-gradient(145deg, #666, #444)',
                       color: "white",
-                      padding: "6px 12px",
+                      padding: "8px 16px",
                       border: "none",
-                      borderRadius: "3px",
-                      cursor: "pointer"
+                      borderRadius: "6px",
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
                     }}
                   >
                     Delete
