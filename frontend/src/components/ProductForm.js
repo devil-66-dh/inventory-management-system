@@ -63,7 +63,7 @@ function ProductForm() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px', gap: '20px', alignItems: 'start' }}>
           <div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '0.95em' }}>Product Name: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Product Name: </label>
               <input
                 type="text"
                 name="name"
@@ -74,7 +74,7 @@ function ProductForm() {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '0.95em' }}>Quantity: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Quantity: </label>
               <input
                 type="number"
                 name="quantity"
@@ -85,7 +85,7 @@ function ProductForm() {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '0.95em' }}>Price: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Price: </label>
               <input
                 type="number"
                 name="price"
@@ -97,7 +97,7 @@ function ProductForm() {
               />
             </div>
             <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '0.95em' }}>Image URL: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '0.95em', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Image URL: </label>
               <input
                 type="url"
                 name="imageUrl"

@@ -71,7 +71,7 @@ function ProductEdit({ product, onClose, onSave }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 120px', gap: '20px', marginBottom: '20px' }}>
           <div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '14px', letterSpacing: '0.3px' }}>Product Name: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Product Name: </label>
               <input
                 type="text"
                 name="name"
@@ -84,7 +84,7 @@ function ProductEdit({ product, onClose, onSave }) {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '14px', letterSpacing: '0.3px' }}>Quantity: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Quantity: </label>
               <input
                 type="number"
                 name="quantity"
@@ -97,7 +97,7 @@ function ProductEdit({ product, onClose, onSave }) {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '14px', letterSpacing: '0.3px' }}>Price: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Price: </label>
               <input
                 type="number"
                 name="price"
@@ -111,7 +111,7 @@ function ProductEdit({ product, onClose, onSave }) {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#2c2c2c', fontSize: '14px', letterSpacing: '0.3px' }}>Image URL: </label>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#000000', fontSize: '14px', letterSpacing: '0.3px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)' }}>Image URL: </label>
               <input
                 type="url"
                 name="imageUrl"

@@ -151,11 +151,11 @@ function ProductList() {
                 />
               )}
               <div style={{ padding: '15px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '18px' }}>{product.name}</h3>
-                <p style={{ margin: '5px 0', color: '#666' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '20px', fontWeight: '800', color: '#000000', textShadow: '0 2px 4px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.1)', letterSpacing: '-0.5px' }}>{product.name}</h3>
+                <p style={{ margin: '8px 0', color: '#000000', fontWeight: '700', fontSize: '16px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>
                   <strong>Quantity:</strong> {product.quantity}
                 </p>
-                <p style={{ margin: '5px 0', color: '#666' }}>
+                <p style={{ margin: '8px 0', color: '#000000', fontWeight: '700', fontSize: '16px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>
                   <strong>Price:</strong> ${product.price.toFixed(2)}
                 </p>
                 <p style={{ margin: '10px 0', padding: '5px', borderRadius: '4px', backgroundColor: product.quantity < 5 ? '#fff3cd' : '#c8e6c9' }}>
@@ -275,12 +275,12 @@ function ProductList() {
                     />
                   )}
                 </td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>{product.id}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>{product.name}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>{product.quantity}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>${product.price.toFixed(2)}</td>
-                <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>
-                  {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: 'bold' }}>Low Stock ⚠️</span> : 'In Stock ✓'}
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.id}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.name}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>{product.quantity}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', color: '#000000', fontWeight: '700', fontSize: '15px', textShadow: '0 1px 2px rgba(255, 255, 255, 0.4)' }}>${product.price.toFixed(2)}</td>
+                <td style={{ padding: '12px', border: '1px solid #E8E0D5', fontWeight: 'bold' }}>
+                  {product.quantity < 5 ? <span style={{ color: 'orange', fontWeight: 'bold' }}>Low Stock ⚠️</span> : <span style={{ color: '#2d8659', fontWeight: 'bold' }}>In Stock ✓</span>}
                 </td>
                 <td style={{ padding: '12px', border: '1px solid #E8E0D5' }}>
                   <button
