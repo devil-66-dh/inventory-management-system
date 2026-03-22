@@ -5,7 +5,8 @@ function ProductEdit({ product, onUpdate, onCancel }) {
   const [formData, setFormData] = useState({
     name: product.name,
     quantity: product.quantity,
-    price: product.price
+    price: product.price,
+    imageUrl: product.imageUrl || ""
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -47,7 +48,7 @@ function ProductEdit({ product, onUpdate, onCancel }) {
       
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: "10px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold", color: '#f0f0f0' }}>Product Name:</label>
+          <label style={{ display: "block", marginBottom: "5px", fontWeight: 900, fontSize: '1rem', color: '#fffacd', textShadow: '0 1px 3px rgba(0,0,0,0.7)' }}>Product Name:</label>
           <input
             type="text"
             name="name"
@@ -59,7 +60,7 @@ function ProductEdit({ product, onUpdate, onCancel }) {
         </div>
 
         <div style={{ marginBottom: "10px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold", color: '#f0f0f0' }}>Quantity:</label>
+          <label style={{ display: "block", marginBottom: "5px", fontWeight: 900, fontSize: '1rem', color: '#fffacd', textShadow: '0 1px 3px rgba(0,0,0,0.7)' }}>Quantity:</label>
           <input
             type="number"
             name="quantity"
@@ -71,7 +72,7 @@ function ProductEdit({ product, onUpdate, onCancel }) {
         </div>
 
         <div style={{ marginBottom: "10px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold", color: '#f0f0f0' }}>Price:</label>
+          <label style={{ display: "block", marginBottom: "5px", fontWeight: 900, fontSize: '1rem', color: '#fffacd', textShadow: '0 1px 3px rgba(0,0,0,0.7)' }}>Price:</label>
           <input
             type="number"
             name="price"
@@ -80,6 +81,17 @@ function ProductEdit({ product, onUpdate, onCancel }) {
             required
             step="0.01"
             style={{ width: "100%", padding: "12px", boxSizing: "border-box", background: '#2d2d2d', color: '#f0f0f0', border: '1px solid #555', borderRadius: '5px' }}
+          />
+        </div>
+
+        <div style={{ marginBottom: "10px" }}>
+          <label style={{ display: "block", marginBottom: "5px", fontWeight: 900, fontSize: '1rem', color: '#fffacd', textShadow: '0 1px 3px rgba(0,0,0,0.7)' }}>Image URL:</label>
+          <input
+            type="text"
+            name="imageUrl"
+            value={formData.imageUrl}
+            onChange={handleChange}
+            style={{ width: "100%", padding: "12px", boxSizing: "border-box", background: '#2d2d2d', color: '#f0f0f0', border: '1px solid #555', borderRadius: '5px', fontWeight: '700', letterSpacing: '0.03em' }}
           />
         </div>
 

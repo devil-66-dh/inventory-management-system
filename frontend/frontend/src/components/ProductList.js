@@ -76,6 +76,7 @@ function ProductList() {
               <th>Name</th>
               <th>Quantity</th>
               <th>Price (₹)</th>
+              <th>Image URL</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -90,7 +91,8 @@ function ProductList() {
                 <td style={{ textAlign: "center", borderColor: '#444' }}>{p.id}</td>
                 <td style={{ color: '#f0f0f0' }}>{p.name}</td>
                 <td style={{ textAlign: "center", color: '#f0f0f0' }}>{p.quantity}</td>
-                <td style={{ textAlign: "right", color: '#d4a500' }}>${p.price.toFixed(2)}</td>
+                <td style={{ textAlign: "right", color: '#d4a500', fontWeight: '700' }}>${p.price.toFixed(2)}</td>
+                <td style={{ textAlign: "left", color: '#f0f0f0', width: '220px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={p.imageUrl}>{p.imageUrl || 'N/A'}</td>
                 <td style={{ textAlign: "center", color: p.quantity < 5 ? '#ff6666' : '#90ee90' }}>
                   {p.quantity < 5 ? "⚠ Low Stock" : "✅ OK"}
                 </td>

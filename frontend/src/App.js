@@ -10,7 +10,15 @@ function App() {
       <header className="app-header">
         <div className="header-content">
           <div className="logo-container">
-            <img src="/logo.svg" alt="Inventory Logo" className="app-logo" />
+            <img
+              src={process.env.PUBLIC_URL + '/image.png'}
+              alt="Inventory Management Logo"
+              className="app-logo"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/logo.svg';
+              }}
+            />
           </div>
           <div className="header-text">
             <h1>Inventory Management System</h1>
